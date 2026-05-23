@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypePrompt - Terms of Use</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #fafafa;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-main: #f3f4f6;
+                --text-muted: #9ca3af;
+                --bg-body: #0b0f19;
+                --bg-card: #111827;
+                --border-color: #1f2937;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-area {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 24px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+            padding: 6px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-main);
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Document Card */
+        .doc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .doc-content {
+            display: none;
+        }
+
+        .doc-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography Inside Agreement */
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 28px 0 12px 0;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .meta-date {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .doc-card {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-area">TypePrompt</div>
+        <h1>Terms of Use & Service Agreement</h1>
+    </header>
+
+    <!-- 语言切换标签栏 -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('zh')">简体中文</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+        <button class="lang-btn" onclick="switchLang('es')">Español</button>
+        <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+        <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+    </div>
+
+    <!-- 协议卡片盒子 -->
+    <main class="doc-card">
+        
+        <!-- ================= 简体中文 ================= -->
+        <article id="doc-zh" class="doc-content active">
+            <p class="meta-date">最后更新日期：2026年5月23日</p>
+            <p>欢迎使用 TypePrompt（以下简称“本软件”或“我们”）。在您使用本软件提供的一切服务（包括主 App、自定义键盘扩展、分享扩展及订阅服务）之前，请仔细阅读本使用条款与服务协议（以下简称“本协议”）。</p>
+
+            <h2>1. 协议的接受与标准 EULA 说明</h2>
+            <p>当您下载、安装、注册或使用本软件，即代表您已阅读并同意本协议的所有条款。如果您不同意本协议的任何内容，请勿使用本软件，并请立即从您的设备中卸载。</p>
+            <p>本软件同时适用苹果 App Store 官方的标准许可应用程序最终用户许可协议（Standard EULA）。如果本协议条款与 Apple Standard EULA 存在冲突，以 Apple Standard EULA（https://www.apple.com/legal/internet-services/itunes/dev/stdeula/）为准。</p>
+
+            <h2>2. 服务内容与使用限制</h2>
+            <ul>
+                <li>本软件为您提供本地提示词（Prompt）管理、自定义输入法卡片快捷上屏及文本分享服务。</li>
+                <li>您应当仅在法律法规允许的范围内合理使用本软件。您不得使用本软件生成、存储或传播任何违反当地法律法规、涉黄、涉赌、暴力、欺诈或侵犯第三方合法权益的信息。</li>
+                <li>我们保留随时修改、暂停或终止部分或全部软件服务的权利，且无需承担因软件更新或调整造成的任何损失。</li>
+            </ul>
+
+            <h2>3. 订阅服务与自动续期条款</h2>
+            <ul>
+                <li><strong>订阅方案</strong>：本软件提供“Pro会员”自动续期订阅。订阅有不同的周期（如月度、年度），具体服务内容与价格以购买界面展示为准。</li>
+                <li><strong>付款与续费</strong>：购买确认后，费用将通过您的 Apple iTunes 账户进行扣除。除非您在当前订阅计费周期结束前至少 24 小时关闭自动续订，否则订阅将自动以原价格续期，且您的账户将在当前计费周期结束前的 24 小时内被收取续订费用。</li>
+                <li><strong>取消订阅</strong>：您可以通过您的设备随时前往“设置” -> “Apple ID” -> “订阅”来取消或管理您的自动续期订阅。</li>
+                <li><strong>恢复购买</strong>：若您在更换设备后需要恢复已购状态，可在内购页面点击“恢复购买”，本软件将通过 StoreKit 接口自动调取您的 Apple 历史交易凭证以恢复 Pro 权限。</li>
+            </ul>
+
+            <h2>4. 免责声明与第三方 AI 责任限定</h2>
+            <p><strong>数据存储免责</strong>：本软件采用本地 SwiftData 持久化技术，您的数据默认存储在您的 iOS 设备本地。我们不提供云端备份。因设备损坏、丢失、重装系统、未备份卸载软件等个人原因造成的数据丢失，由您自行承担。</p>
+            <p><strong>AI 输出责任</strong>：本软件仅作为提示词管理与输入法工具，不直接生产任何 AI 内容。用户使用本软件中的提示词输入到第三方大语言模型（如 ChatGPT、Claude、Gemini 等）后生成的任何文本内容，均由该大模型提供方和用户本人承担相应责任，我们不对第三方 AI 输出的准确性、合法性或可用性承担任何间接或连带法律责任。</p>
+
+            <h2>5. 协议的修改与适用法律</h2>
+            <p>本协议的解释、效力及纠纷解决，均适用中华人民共和国法律（不含港澳台地区）。若因本协议产生争议，双方应友好协商解决；协商不成的，任何一方均可向我们所在地有管辖权的人民法院提起诉讼。我们保留在必要时修改本协议的权利，修改后的协议一旦公布即代替原协议生效。</p>
+        </article>
+
+        <!-- ================= English ================= -->
+        <article id="doc-en" class="doc-content">
+            <p class="meta-date">Last Updated: May 23, 2026</p>
+            <p>Welcome to TypePrompt ("the App", "we", "us", or "our"). By downloading, installing, or using the App, including its main host application, custom keyboard extension, share extension, and subscription services, you agree to be bound by these Terms of Use ("the Terms").</p>
+
+            <h2>1. Acceptance of Terms & Apple Standard EULA</h2>
+            <p>By accessing or using TypePrompt, you represent that you have read, understood, and agreed to these Terms. If you do not agree, you must immediately uninstall and discontinue use of the App.</p>
+            <p>This App is governed by the standard Apple Licensed Application End User License Agreement (Standard EULA). If any terms herein conflict with Apple's Standard EULA, Apple's Standard EULA (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) shall prevail.</p>
+
+            <h2>2. Service Description and Use Restrictions</h2>
+            <ul>
+                <li>TypePrompt provides local prompt template management, a system-level custom keyboard extension, and text-sharing utilities.</li>
+                <li>You agree to use the App in compliance with all applicable local laws and regulations. You shall not generate, store, or transmit any content that is illegal, harmful, threatening, abusive, defamatory, or otherwise violates the rights of others.</li>
+                <li>We reserve the right to modify, suspend, or terminate the App or any of its features at any time without notice or liability.</li>
+            </ul>
+
+            <h2>3. Subscriptions and Automatic Renewal</h2>
+            <ul>
+                <li><strong>Subscription Model</strong>: We offer auto-renewing subscriptions ("Pro Membership") to unlock premium features. Subscription billing intervals and pricing are detailed on the in-app purchase screen.</li>
+                <li><strong>Billing and Renewal</strong>: Payment will be charged to your Apple iTunes account at confirmation of purchase. Subscriptions automatically renew at the original price unless auto-renew is turned off at least 24 hours before the end of the current billing cycle.</li>
+                <li><strong>Cancellation</strong>: You can cancel or manage your subscriptions by going to your iOS Account Settings (Settings -> Apple ID -> Subscriptions).</li>
+                <li><strong>Restore Purchases</strong>: If you reinstall the App or change devices, you can restore your active purchases by tapping "Restore Purchases" in the App.</li>
+            </ul>
+
+            <h2>4. Disclaimers and AI Content Limitations</h2>
+            <p><strong>Local Data Storage Disclaimer</strong>: The App utilizes local SwiftData persistent storage. Your custom templates are stored solely on your physical device. We do not provide cloud backups. You are responsible for managing your device backups. We are not liable for data loss due to device damage, uninstalls without backups, or system resets.</p>
+            <p><strong>AI Output Limitation</strong>: The App functions purely as a prompt manager and custom input tool. Any content generated by inputting prompts from this App into third-party Large Language Models (LLMs) (such as ChatGPT, Claude, Gemini, etc.) is the sole responsibility of the LLM provider and yourself. We do not assume any legal liability for the accuracy, legality, or completeness of LLM outputs.</p>
+
+            <h2>5. Governing Law and Amendments</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the local jurisdiction where the App owner resides, without regard to conflict of law principles. Any disputes shall be resolved through negotiation or submitted to a court of competent jurisdiction. We reserve the right to amend these Terms at any time.</p>
+        </article>
+
+        <!-- ================= 日本語 ================= -->
+        <article id="doc-ja" class="doc-content">
+            <p class="meta-date">最終更新日：2026年5月23日</p>
+            <p>TypePrompt（以下、「本アプリ」または「当社」）をご利用いただきありがとうございます。本アプリ（本体アプリ、カスタムキーボード拡張、共有拡張、およびサブスクリプションサービスを含みます）のご利用にあたり、以下の利用規約（以下、「本規約」）をよくお読みください。</p>
+
+            <h2>1. 規約の同意およびApple標準EULAについて</h2>
+            <p>ユーザーが本アプリをダウンロード、インストール、または使用した時点で、本規約のすべての条項に同意したものとみなされます。同意されない場合は、本アプリの使用を直ちに中止し、デバイスからアンインストールしてください。</p>
+            <p>本アプリには、Apple App Storeが提供する「標準のライセンスアプリケーションエンドユーザー使用許諾契約（Standard EULA）」が適用されます。本規約の条項とApple Standard EULAとの間に矛盾がある場合は、Apple Standard EULA（https://www.apple.com/legal/internet-services/itunes/dev/stdeula/）の規定が優先されます。</p>
+
+            <h2>2. サービス内容と使用制限</h2>
+            <ul>
+                <li>本アプリは、ローカルでのプロンプト（Prompt）管理、システムキーボードからの定型文入力、およびテキスト共有機能を提供します。</li>
+                <li>ユーザーは、法令を遵守して本アプリを利用するものとします。他者の権利を侵害する内容、暴力的・公序良俗に反する内容、違法な内容のプロンプトを生成、保存、または送信することは禁止されています。</li>
+                <li>当社は、ユーザーへの事前通知なしに、本アプリまたはその機能の変更、一時停止、終了を行う権利を留保します。</li>
+            </ul>
+
+            <h2>3. サブスクリプションおよび自動更新</h2>
+            <ul>
+                <li><strong>サブスクリプションプラン</strong>：プレミアム機能の利用を可能にする「Pro会員」自動更新サブスクリプションを提供しています。価格および期間はアプリ内の購入画面に提示されています。</li>
+                <li><strong>請求と更新</strong>：購入確定時、ユーザーのApple iTunesアカウントに料金が請求されます。購読期間の終了の24時間前までに自動更新をオフにしない限り、サブスクリプションは同じ価格で自動更新され、その際の更新料は終了前の24時間以内に請求されます。</li>
+                <li><strong>解約</strong>：ユーザーは、iOSのアカウント設定（設定 -> Apple ID -> サブスクリプション）から、いつでも自動更新の停止・管理を行うことができます。アクティブな購読期間に対する返金は行われません。</li>
+                <li><strong>購入の復元</strong>：アプリの再インストールやデバイスの変更時、購入画面の「購入の復元」をタップすることで、追加料金なしでPro権限を復元できます。</li>
+            </ul>
+
+            <h2>4. 免責事項およびAIコンテンツの制限</h2>
+            <p><strong>データストレージに関する免責</strong>：本アプリはローカルのSwiftDataストレージを使用しています。作成されたプロンプトなどのデータはユーザーの物理デバイスのみに保存され、クラウドへのバックアップは行われません。デバイスの破損、バックアップなしでのアプリ削除、リセット等に伴うデータ消失について、当社は一切の責任を負いません。</p>
+            <p><strong>AIコンテンツに関する制限</strong>：本アプリはプロンプトの管理・入力支援ツールであり、AIコンテンツ自体を直接生成するものではありません。本アプリのプロンプトを利用してサードパーティ製のAIモデル（ChatGPT、Claude、Geminiなど）が生成したテキスト内容について、当社は一切の正確性、合法性、または結果に対する責任を负いません。</p>
+
+            <h2>5. 準拠法と管轄裁判所</h2>
+            <p>本規約は、当社の所在地が属する国の管轄法に準拠し、それに従って解釈されるものとします。本規約に関連して生じた紛争は、双方の協議により解決を図るものとし、解決しない場合は管轄の裁判所へ申し立てるものとします。当社は必要に応じて随時本規約を改定する権利を留留します。</p>
+        </article>
+
+        <!-- ================= Español ================= -->
+        <article id="doc-es" class="doc-content">
+            <p class="meta-date">Última actualización: 23 de mayo de 2026</p>
+            <p>Bienvenido a TypePrompt ("la Aplicación", "nosotros", "nuestro/a"). Al descargar, instalar o utilizar la Aplicación (incluyendo su aplicación principal, la extensión del teclado del sistema, la extensión para compartir y los servicios de suscripción), usted acepta cumplir con estos Términos de Uso ("los Términos").</p>
+
+            <h2>1. Aceptación de los Términos y Apple Standard EULA</h2>
+            <p>Al utilizar TypePrompt, usted declara que ha leído, comprendido y aceptado estos Términos. Si no está de acuerdo, debe desinstalar y dejar de usar la Aplicación de inmediato.</p>
+            <p>Esta Aplicación se rige por el Acuerdo de Licencia de Usuario Final para Aplicaciones Licenciadas estándar de Apple (EULA estándar). Si alguno de los términos aquí contenidos entra en conflicto con el EULA estándar de Apple, prevalecerá el EULA estándar de Apple (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/).</p>
+
+            <h2>2. Descripción del Servicio y Restricciones de Uso</h2>
+            <ul>
+                <li>TypePrompt proporciona administración local de plantillas de prompts, una extensión de teclado personalizado a nivel de sistema y utilidades de uso compartido de texto.</li>
+                <li>Usted acepta utilizar la Aplicación de conformidad con todas las leyes y regulaciones locales aplicables. No generará, almacenará ni transmitirá ningún contenido que sea ilegal, dañino, amenazante, abusivo o que viole los derechos de terceros.</li>
+                <li>Nos reservamos el derecho de modificar, suspender o finalizar la Aplicación o cualquiera de sus funciones en cualquier momento sin previo aviso ni responsabilidad.</li>
+            </ul>
+
+            <h2>3. Suscripciones y Renovación Automática</h2>
+            <ul>
+                <li><strong>Modelo de Suscripción</strong>: Ofrecemos suscripciones de renovación automática ("Suscripción Pro") para desbloquear funciones Premium. Los intervalos de facturación y los precios se detallan en la pantalla de compra dentro de la aplicación.</li>
+                <li><strong>Facturación y Renovación</strong>: El pago se cargará a su cuenta de Apple iTunes al confirmar la compra. Las suscripciones se renuevan automáticamente al precio original a menos que la renovación automática se desactive al menos 24 horas antes del final del ciclo de facturación actual.</li>
+                <li><strong>Cancelación</strong>: Puede gestionar o cancelar sus suscripciones a través de los Ajustes de su cuenta de Apple ID (Ajustes -> Apple ID -> Suscripciones).</li>
+                <li><strong>Restaurar compras</strong>: Si reinstala la Aplicación o cambia de dispositivo, puede restaurar sus compras activas tocando "Restaurar compras" en la Aplicación.</li>
+            </ul>
+
+            <h2>4. Descargo de Responsabilidad y Limitaciones de Contenido de IA</h2>
+            <p><strong>Descargo de almacenamiento local de datos</strong>: La Aplicación utiliza almacenamiento SwiftData local. Sus plantillas personalizadas se guardan exclusivamente en su dispositivo físico. No ofrecemos copias de seguridad en la nube. Usted es responsable de gestionar las copias de seguridad de su dispositivo. No somos responsables de la pérdida de datos debido a daños en el dispositivo, desinstalaciones sin copia de seguridad o reinicios del sistema.</p>
+            <p><strong>Limitación de salida de IA</strong>: La Aplicación funciona puramente como un gestor de prompts y un teclado de entrada personalizado. Cualquier contenido generado al introducir prompts de esta Aplicación en modelos de IA de terceros (como ChatGPT, Claude, Gemini, etc.) es responsabilidad exclusiva del proveedor de IA y de usted mismo. No asumimos responsabilidad alguna por la exactitud, legalidad o integridad de los resultados generados por dichas IA.</p>
+
+            <h2>5. Ley Aplicable y Enmiendas</h2>
+            <p>Estos Términos se regirán e interpretarán de acuerdo con las leyes de la jurisdicción local donde reside el propietario de la Aplicación. Cualquier disputa se resolverá mediante negociación o se someterá a un tribunal competente. Nos reservamos el derecho de modificar estos Términos en cualquier momento.</p>
+        </article>
+
+        <!-- ================= Français ================= -->
+        <article id="doc-fr" class="doc-content">
+            <p class="meta-date">Dernière mise à jour : 23 mai 2026</p>
+            <p>Bienvenue sur TypePrompt ("l'Application", "nous", "notre", "nos"). En téléchargeant, installant ou utilisant l'Application (y compris son application principale, son extension de clavier système, son extension de partage et ses services d'abonnement), vous acceptez d'être lié par les présentes Conditions d'Utilisation ("les Conditions").</p>
+
+            <h2>1. Acceptation des Conditions & Contrat EULA Standard d'Apple</h2>
+            <p>En accédant à TypePrompt ou en l'utilisant, vous déclarez avoir lu, compris et accepté les présentes Conditions. Si vous n'êtes pas d'accord, vous devez immédiatement désinstaller et cesser d'utiliser l'Application.</p>
+            <p>Cette Application est régie par le contrat de licence utilisateur final standard d'Apple pour les applications sous licence (EULA Standard). Si l'une des dispositions des présentes Conditions entre en conflit avec l'EULA Standard d'Apple, l'EULA Standard d'Apple (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) prévaudra.</p>
+
+            <h2>2. Description du Service et Restrictions d'Utilisation</h2>
+            <ul>
+                <li>TypePrompt fournit un gestionnaire local de modèles de prompts, une extension de clavier iOS personnalisée et des utilitaires de partage de texte.</li>
+                <li>Vous acceptez d'utiliser l'Application conformément à toutes les lois et réglementations locales applicables. Vous ne devez pas générer, stocker ni transmettre de contenu illégal, nuisible, menaçant, injurieux ou violant les droits d'autrui.</li>
+                <li>Nous nous réservons le droit de modifier, de suspendre ou d'interrompre l'Application ou l'une de ses fonctionnalités à tout moment, sans préavis ni responsabilité.</li>
+            </ul>
+
+            <h2>3. Abonnements et Renouvellement Automatique</h2>
+            <ul>
+                <li><strong>Modèle d'Abonnement</strong> : Nous proposons des abonnements auto-renouvelables ("Abonnement Pro") pour débloquer les fonctionnalités premium. Les tarifs et les fréquences de facturation sont détaillés sur l'écran d'achat intégré à l'application.</li>
+                <li><strong>Facturation et Renouvellement</strong> : Le paiement sera débité de votre compte Apple iTunes lors de la confirmation de l'achat. L'abonnement se renouvelle automatiquement au prix d'origine, sauf si le renouvellement automatique est désactivé au moins 24 heures avant la fin de la période de facturation en cours.</li>
+                <li><strong>Résiliation</strong> : Vous pouvez gérer ou résilier vos abonnements à tout moment dans les réglages de votre compte Apple ID (Réglages -> Apple ID -> Abonnements).</li>
+                <li><strong>Restaurer les achats</strong> : Si vous réinstallez l'Application ou changez de périphérique, vous pouvez restaurer vos achats actifs en touchant "Restaurer les achats" dans l'Application.</li>
+            </ul>
+
+            <h2>4. Exclusions de Responsabilité et Limites relatives aux Contenus d'IA</h2>
+            <p><strong>Exclusion relative au stockage local des données</strong> : L'Application utilise un stockage SwiftData local. Vos modèles personnalisés sont stockés exclusivement sur votre appareil physique. Nous ne fournissons pas de sauvegarde sur le cloud. Vous êtes responsable de la gestion des sauvegardes de votre appareil. Nous déclinons toute responsabilité en cas de perte de données due à un endommagement de l'appareil, à une désinstallation sans sauvegarde ou à une réinitialisation du système.</p>
+            <p><strong>Limite relative aux contenus générés par l'IA</strong> : L'Application fonctionne uniquement comme un gestionnaire de prompts et un clavier de saisie personnalisé. Tout contenu généré en soumettant des prompts de cette Application à des modèles d'IA tiers (tels que ChatGPT, Claude, Gemini, etc.) relève de la seule responsabilité du fournisseur d'IA et de vous-même. Nous n'assumons aucune responsabilité quant à l'exactitude, à la légalité ou à l'exhaustivité des réponses générées par ces IA.</p>
+
+            <h2>5. Droit Applicable et Modifications</h2>
+            <p>Les présentes Conditions sont régies et interprétées conformément aux lois en vigueur dans la juridiction du propriétaire de l'Application. Tout litige sera résolu par négociation ou soumis à un tribunal compétent. Nous nous réservons le droit de modifier ces Conditions à tout moment.</p>
+        </article>
+
+        <!-- ================= Deutsch ================= -->
+        <article id="doc-de" class="doc-content">
+            <p class="meta-date">Zuletzt aktualisiert: 23. Mai 2026</p>
+            <p>Willkommen bei TypePrompt („die App“, „wir“, „uns“ oder „unsere“). Durch das Herunterladen, Installieren oder Verwenden der App (einschließlich der Hauptanwendung, der Tastaturerweiterung, der Freigabeerweiterung und der Abonnementdienste) erklären Sie sich mit diesen Nutzungsbedingungen („die Bedingungen“) einverstanden.</p>
+
+            <h2>1. Einverständniserklärung und Apple Standard EULA</h2>
+            <p>Durch den Zugriff auf TypePrompt oder die Nutzung der App bestätigen Sie, dass Sie diese Bedingungen gelesen, verstanden und akzeptiert haben. Wenn Sie nicht einverstanden sind, müssen Sie die App unverzüglich deinstallieren und die Nutzung einstellen.</p>
+            <p>Diese App unterliegt den Bedingungen der standardmäßigen Apple Endbenutzer-Lizenzvereinbarung für lizenzierte Anwendungen (Standard-EULA). Sollten Bestimmungen dieser Vereinbarung im Widerspruch zur Standard-EULA von Apple stehen, hat die Standard-EULA von Apple (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) Vorrang.</p>
+
+            <h2>2. Leistungsbeschreibung und Nutzungsbeschränkungen</h2>
+            <ul>
+                <li>TypePrompt bietet eine lokale Verwaltung von Prompt-Vorlagen, eine benutzerdefinierte iOS-Systemtastaturerweiterung und Funktionen zum Teilen von Texten.</li>
+                <li>Sie verpflichten sich, die App in Übereinstimmung mit allen geltenden lokalen Gesetzen und Vorschriften zu nutzen. Es ist untersagt, Prompts zu erstellen, zu speichern oder zu übertragen, die rechtswidrig, schädlich, bedrohlich oder missbräuchlich sind.</li>
+                <li>Wir behalten uns das Recht vor, die App oder einzelne Funktionen jederzeit ohne Vorankündigung oder Haftung zu ändern, auszusetzen oder einzustellen.</li>
+            </ul>
+
+            <h2>3. Abonnements und automatische Verlängerung</h2>
+            <ul>
+                <li><strong>Abonnement-Modell</strong>: Wir bieten sich automatisch verlängernde Abonnements („Pro-Mitgliedschaft“) an, um Premium-Funktionen freizuschalten. Abrechnungszeiträume und Preise sind auf dem In-App-Kaufbildschirm aufgeführt.</li>
+                <li><strong>Abrechnung und Verlängerung</strong>: Der Betrag wird bei Kaufbestätigung von Ihrem Apple-iTunes-Konto abgebucht. Abonnements verlängern sich automatisch zum ursprünglichen Preis, es sei denn, die automatische Verlängerung wird mindestens 24 Stunden vor Ablauf des aktuellen Abrechnungszeitraums deaktiviert.</li>
+                <li><strong>Kündigung</strong>: Sie können Ihre Abonnements jederzeit in den Einstellungen Ihres Apple-ID-Kontos (Einstellungen -> Apple ID -> Abonnements) verwalten oder kündigen.</li>
+                <li><strong>Käufe wiederherstellen</strong>: Wenn Sie die App neu installieren oder das Gerät wechseln, können Sie Ihre aktiven Käufe wiederherstellen, indem Sie in der App auf „Käufe wiederherstellen“ tippen.</li>
+            </ul>
+
+            <h2>4. Haftungsausschluss und Einschränkungen für KI-Inhalte</h2>
+            <p><strong>Haftungsausschluss für die lokale Datenspeicherung</strong>: Die App nutzt den lokalen SwiftData-Speicher Ihres Geräts. Ihre benutzerdefinierten Vorlagen werden ausschließlich auf Ihrem physischen Gerät gespeichert. Wir bieten keine Cloud-Backups an. Sie sind für die Verwaltung der Backups Ihres Geräts selbst verantwortlich. Wir haften nicht für Datenverlust durch Geräteschäden, Deinstallation ohne Backup oder System-Resets.</p>
+            <p><strong>Einschränkung für KI-generierte Inhalte</strong>: Die App fungiert ausschließlich als Prompt-Manager und Tastatureingabehilfe. Alle Inhalte, die durch die Eingabe von Prompts aus dieser App in KI-Modelle von Drittanbietern (wie ChatGPT, Claude, Gemini usw.) entstehen, liegen in der alleinigen Verantwortung des KI-Anbieters und Ihrer selbst. Wir übernehmen keine Haftung für die Richtigkeit oder Rechtmäßigkeit der von diesen KIs generierten Ergebnisse.</p>
+
+            <h2>5. Anwendbares Recht und Änderungen</h2>
+            <p>Diese Bedingungen unterliegen den Gesetzen des Landes, in dem der Eigentümer der App seinen Sitz hat. Alle Streitigkeiten werden durch Verhandlungen beizulegen versucht oder vor einem zuständigen Gericht verhandelt. Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern.</p>
+        </article>
+
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2026 TypePrompt. All rights reserved.</p>
+</footer>
+
+<script>
+    function switchLang(lang) {
+        // 1. 切换按钮的 active 样式
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // 找到当前点击的按钮并激活
+        event.currentTarget.classList.add('active');
+
+        // 2. 切换对应语言文档卡片的显示
+        const docs = document.querySelectorAll('.doc-content');
+        docs.forEach(doc => doc.classList.remove('active'));
+
+        const activeDoc = document.getElementById('doc-' + lang);
+        if (activeDoc) {
+            activeDoc.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
