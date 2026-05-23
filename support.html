@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypePrompt - Support & FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #fafafa;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-main: #f3f4f6;
+                --text-muted: #9ca3af;
+                --bg-body: #0b0f19;
+                --bg-card: #111827;
+                --border-color: #1f2937;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-area {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 24px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+            padding: 6px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-main);
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Document Card */
+        .doc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .doc-content {
+            display: none;
+        }
+
+        .doc-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* FAQ Styling */
+        .faq-section {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .contact-box {
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-email {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .doc-card {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-area">TypePrompt</div>
+        <h1>Support & FAQ</h1>
+    </header>
+
+    <!-- 语言切换标签栏 -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('zh')">简体中文</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+        <button class="lang-btn" onclick="switchLang('es')">Español</button>
+        <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+        <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+    </div>
+
+    <!-- 协议卡片盒子 -->
+    <main class="doc-card">
+        
+        <!-- ================= 简体中文 ================= -->
+        <article id="doc-zh" class="doc-content active">
+            <div class="contact-box">
+                <div class="contact-title">📮 反馈与技术支持</div>
+                <p>如果您在使用 TypePrompt 过程中遇到任何问题或有改进建议，请随时通过以下邮箱联系我们：</p>
+                <a href="mailto:support@typeprompt.com" class="contact-email">support@typeprompt.com</a>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何在 iPhone 上启用 TypePrompt 键盘？</div>
+                    <div class="faq-answer">
+                        答：请在安装 App 后，前往 iPhone 的系统“设置 (Settings) -> 通用 -> 键盘 -> 键盘 -> 添加新键盘”，选择并添加 `TypePrompt`。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 键盘必须开启“允许完全访问”权限吗？</div>
+                    <div class="faq-answer">
+                        答：不是必须的。为了保障您的隐私安全，TypePrompt 支持在**关闭**完全访问权限时独立以“体验模式”运行，100% 保护输入隐私；如果您需要读取在主 App 中自定义保存的卡片，则需要在“键盘”设置里启用“允许完全访问”。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 购买了 Pro 会员但键盘没有解锁，该怎么办？</div>
+                    <div class="faq-answer">
+                        答：请确保开启了“允许完全访问”权限，键盘方可与主 App 进行数据库同步。如果状态仍未刷新，请回到主 App，在“我的”页面点击“恢复购买”按钮。
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= English ================= -->
+        <article id="doc-en" class="doc-content">
+            <div class="contact-box">
+                <div class="contact-title">📮 Feedback & Technical Support</div>
+                <p>If you encounter any problems or have suggestions for TypePrompt, please contact us via email:</p>
+                <a href="mailto:support@typeprompt.com" class="contact-email">support@typeprompt.com</a>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">Q: How do I enable the TypePrompt keyboard on my iPhone?</div>
+                    <div class="faq-answer">
+                        A: Go to your iPhone Settings -> General -> Keyboard -> Keyboards -> Add New Keyboard, and choose `TypePrompt`.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: Is "Allow Full Access" required for the keyboard?</div>
+                    <div class="faq-answer">
+                        A: No. To protect your privacy, TypePrompt runs in a local "Read-Only Mode" without full access. If you need to access your custom prompts saved in the host App, you must enable "Allow Full Access" in Settings.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: I bought Pro but the keyboard features are still locked?</div>
+                    <div class="faq-answer">
+                        A: Ensure "Allow Full Access" is enabled so the keyboard can sync data. If the status doesn't update, open the host App and tap "Restore Purchases" in the settings.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= 日本語 ================= -->
+        <article id="doc-ja" class="doc-content">
+            <div class="contact-box">
+                <div class="contact-title">📮 フィードバックとテクニカルサポート</div>
+                <p>TypePromptに関するご質問やご意見がございましたら、メールにてお問い合わせください：</p>
+                <a href="mailto:support@typeprompt.com" class="contact-email">support@typeprompt.com</a>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">Q: iPhoneでTypePromptキーボードを有効にする方法は？</div>
+                    <div class="faq-answer">
+                        A: iPhoneの 設定 -> 一般 -> キーボード -> キーボード -> 新しいキーボードを追加 から、`TypePrompt`を選択して追加してください。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: キーボードには「フルアクセスを許可」が必要ですか？</div>
+                    <div class="faq-answer">
+                        A: 必須ではありません。プライバシー保護のため、フルアクセスなしでもローカルの体験モードとして動作します。ホストアプリで保存したカスタムプロンプトを読み込むには、設定で「フルアクセスを許可」をオンにする必要があります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: Pro会員を購入したのに、キーボードがロックされたままです。</div>
+                    <div class="faq-answer">
+                        A: キーボードがデータベースと同期できるよう、「フルアクセスを許可」がオンになっていることを確認してください。それでも同期されない場合は、ホストアプリに戻り、「マイページ」の「購入の復元」をタップしてください。
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= Español ================= -->
+        <article id="doc-es" class="doc-content">
+            <div class="contact-box">
+                <div class="contact-title">📮 Soporte Técnico y Comentarios</div>
+                <p>Si tiene algún problema o sugerencia para TypePrompt, contáctenos por correo electrónico:</p>
+                <a href="mailto:support@typeprompt.com" class="contact-email">support@typeprompt.com</a>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">¿Cómo activo el teclado TypePrompt en mi iPhone?</div>
+                    <div class="faq-answer">
+                        Respuesta: Vaya a Ajustes -> General -> Teclado -> Teclados -> Añadir nuevo teclado y elija `TypePrompt`.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Es obligatorio activar el "Acceso total" para el teclado?</div>
+                    <div class="faq-answer">
+                        Respuesta: No. Para proteger su privacidad, el teclado funciona localmente sin acceso total. Si necesita cargar los prompts personalizados que ha guardado en la aplicación principal, debe activar el "Acceso total" en Ajustes.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Compré la Suscripción Pro pero las funciones siguen bloqueadas</div>
+                    <div class="faq-answer">
+                        Respuesta: Asegúrese de activar el "Acceso total" para sincronizar la base de datos local. Si sigue sin funcionar, vaya a la aplicación principal y pulse en "Restaurar compras".
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= Français ================= -->
+        <article id="doc-fr" class="doc-content">
+            <div class="contact-box">
+                <div class="contact-title">📮 Assistance Technique & Commentaires</div>
+                <p>Si vous rencontrez des difficultés ou si vous avez des suggestions pour TypePrompt, contactez-nous :</p>
+                <a href="mailto:support@typeprompt.com" class="contact-email">support@typeprompt.com</a>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">Comment activer le clavier TypePrompt sur mon iPhone ?</div>
+                    <div class="faq-answer">
+                        Réponse : Allez dans Réglages -> Général -> Clavier -> Claviers -> Ajouter un clavier, puis sélectionnez `TypePrompt`.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">L'activation de l'accès complet est-elle obligatoire ?</div>
+                    <div class="faq-answer">
+                        Réponse : Non. Pour votre confidentialité, le clavier fonctionne sans accès complet. Si vous souhaitez charger vos prompts personnalisés, vous devez activer l'accès complet dans les réglages du clavier.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">J'ai acheté l'abonnement Pro mais le clavier est toujours bloqué ?</div>
+                    <div class="faq-answer">
+                        Réponse : Vérifiez que l'accès complet est bien activé. Si le statut n'est pas mis à jour, ouvrez l'application et appuyez sur "Restaurer les achats".
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= Deutsch ================= -->
+        <article id="doc-de" class="doc-content">
+            <div class="contact-box">
+                <div class="contact-title">📮 Technischer Support & Feedback</div>
+                <p>Wenn Sie Fragen oder Anregungen zu TypePrompt haben, kontaktieren Sie uns bitte per E-Mail:</p>
+                <a href="mailto:support@typeprompt.com" class="contact-email">support@typeprompt.com</a>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">Wie aktiviere ich die TypePrompt-Tastatur auf meinem iPhone?</div>
+                    <div class="faq-answer">
+                        Antwort: Gehen Sie auf Ihrem iPhone zu Einstellungen -> Allgemein -> Tastatur -> Tastaturen -> Tastatur hinzufügen und wählen Sie `TypePrompt`.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Ist „Vollzugriff erlauben“ für die Tastatur erforderlich?</div>
+                    <div class="faq-answer">
+                        Antwort: Nein. Zum Schutz Ihrer Privatsphäre funktioniert die Tastatur lokal ohne Vollzugriff. Um auf Ihre eigenen Vorlagen aus der App zugreifen zu können, müssen Sie „Vollzugriff erlauben“ aktivieren.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Ich habe Pro gekauft, aber die Tastatur ist gesperrt?</div>
+                    <div class="faq-answer">
+                        Antwort: Stellen Sie sicher, dass „Vollzugriff erlauben“ aktiviert ist. Falls der Status nicht aktualisiert wird, öffnen Sie die Haupt-App und tippen Sie auf „Käufe wiederherstellen“.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2026 TypePrompt. All rights reserved.</p>
+</footer>
+
+<script>
+    function switchLang(lang) {
+        // 1. 切换按钮的 active 样式
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // 找到当前点击 the 按钮并激活
+        event.currentTarget.classList.add('active');
+
+        // 2. 切换对应语言文档卡片的显示
+        const docs = document.querySelectorAll('.doc-content');
+        docs.forEach(doc => doc.classList.remove('active'));
+
+        const activeDoc = document.getElementById('doc-' + lang);
+        if (activeDoc) {
+            activeDoc.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
