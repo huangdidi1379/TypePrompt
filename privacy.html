@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypePrompt - Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #fafafa;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-main: #f3f4f6;
+                --text-muted: #9ca3af;
+                --bg-body: #0b0f19;
+                --bg-card: #111827;
+                --border-color: #1f2937;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-area {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 24px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+            padding: 6px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-main);
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Document Card */
+        .doc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .doc-content {
+            display: none;
+        }
+
+        .doc-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography Inside Agreement */
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 28px 0 12px 0;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .meta-date {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .doc-card {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-area">TypePrompt</div>
+        <h1>Privacy Policy</h1>
+    </header>
+
+    <!-- 语言切换标签栏 -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('zh')">简体中文</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+        <button class="lang-btn" onclick="switchLang('es')">Español</button>
+        <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+        <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+    </div>
+
+    <!-- 协议卡片盒子 -->
+    <main class="doc-card">
+        
+        <!-- ================= 简体中文 ================= -->
+        <article id="doc-zh" class="doc-content active">
+            <p class="meta-date">最后更新日期：2026年5月23日</p>
+            <p>TypePrompt（以下简称“我们”或“本软件”）高度重视用户个人隐私的保护。本隐私政策旨在向您说明我们在您使用本软件的过程中，如何收集、使用、存储和保护您的个人信息。</p>
+
+            <h2>1. 个人信息的收集与使用原则</h2>
+            <p>我们遵循“极简与数据最小化”的原则。<strong>我们不设立任何云端服务器，亦不收集或存储您的任何文本输入数据。</strong></p>
+            <ul>
+                <li><strong>键盘扩展免完全访问说明</strong>：我们的系统级自定义键盘扩展（Keyboard Extension）支持在<strong>关闭系统“允许完全访问”</strong>状态下正常运行。在此降级模式下，键盘在沙盒限制中完全本地化运行，没有任何网络访问权限，也绝对无法对外传输任何数据。</li>
+                <li><strong>本地存储数据</strong>：您创建、编辑、删除的自定义 Prompt 卡片，均通过 SwiftData 仅存储在您个人的 iOS 物理设备本地中。我们不上传、不收集、不备份您的这些自定义内容。</li>
+                <li><strong>购买交易数据</strong>：当您订阅本软件的 Pro 会员时，所有的支付和交易均通过苹果官方的 App Store / StoreKit 安全机制处理。我们不接触、不收集、不存储您的信用卡卡号、银行账户或真实姓名，仅通过苹果提供的匿名交易标识符（Receipt / Transaction ID）在本地做激活状态验证。</li>
+                <li><strong>分享海报数据</strong>：当您使用“分享海报”功能时，系统会在您的设备本地通过 ImageRenderer 渲染生成图片，并调用 iOS系统原生的分享控制器（UIActivityViewController）。该过程完全在您手机本地完成，不经过任何外部服务器。</li>
+            </ul>
+
+            <h2>2. 第三方 SDK 与服务说明</h2>
+            <p>为确保本软件的正常运行，我们没有集成任何包含敏感跟踪或收集个人隐私的第三方分析 SDK。我们仅使用 Apple 官方的底层 Swift/SwiftUI 及 StoreKit SDK。</p>
+
+            <h2>3. 数据安全与出境说明</h2>
+            <ul>
+                <li>所有数据仅存储在您的 iPhone 设备本地沙盒中。</li>
+                <li>我们不会与任何第三方共享、出售或出租用户的任何数据。</li>
+            </ul>
+
+            <h2>4. GDPR & CCPA 用户权益保障</h2>
+            <p>由于我们不收集、不传输任何用户个人标识信息（PII），因此我们的数据处理方式天然符合欧盟通用数据保护条例（GDPR）以及加州消费者隐私法（CCPA）的核心合规要求：</p>
+            <ul>
+                <li><strong>知情权与删除权</strong>：您对您的本地 Prompt 数据库拥有完整的物理控制权。您可以通过在 App 内直接删除特定的 Prompt，或者通过在 iOS 设备中彻底卸载本软件，以此原地、即时且不可逆地删除您本地存储的全部数据。</li>
+            </ul>
+
+            <h2>5. 隐私政策的更新与联系方式</h2>
+            <p>我们可能会不时更新本隐私政策。若有重大变更，我们将在本软件内或本页面上发布更新版本。</p>
+            <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：<br>电子邮箱：support@typeprompt.com</p>
+        </article>
+
+        <!-- ================= English ================= -->
+        <article id="doc-en" class="doc-content">
+            <p class="meta-date">Last Updated: May 23, 2026</p>
+            <p>At TypePrompt ("we", "us", or "our"), we are committed to protecting your privacy. This Privacy Policy describes how we process your personal data when you use our main host application, system-level custom keyboard extension, and share extension.</p>
+
+            <h2>1. Information Collection and Processing Principles</h2>
+            <p>We adhere to a strict minimal-data and local-processing architecture. <strong>We do not run any cloud servers, and we do not collect, upload, or store your text typing data.</strong></p>
+            <ul>
+                <li><strong>Keyboard Extension without Full Access</strong>: Our custom keyboard extension supports operation <strong>without requiring "Allow Full Access"</strong> enabled. Under this standard mode, the keyboard runs locally within a secure sandbox environment on iOS, has no network privileges, and is technically incapable of transmitting your data outside of your device.</li>
+                <li><strong>Locally Stored Data</strong>: Any custom prompts you add, edit, or delete are stored locally on your device via iOS SwiftData storage. We do not sync, store, or back up this data on any servers.</li>
+                <li><strong>Subscription and Transaction Data</strong>: Transactions for our Pro Membership subscriptions are processed securely by Apple through the App Store / StoreKit. We do not collect or store your payment details. We only verify your purchase status locally using Apple's anonymous transaction identifiers.</li>
+                <li><strong>Elegant Poster Share Utility</strong>: When creating sharing posters, the rendering is performed entirely on your device via the native Swift ImageRenderer and shared via iOS's native UIActivityViewController. No image data is sent to external servers.</li>
+            </ul>
+
+            <h2>2. Third-Party Analytics and SDKs</h2>
+            <p>To guarantee maximum privacy, we do not integrate third-party analytics SDKs, user-tracking frameworks, or advertising SDKs. We use only native Swift/SwiftUI libraries and Apple's official StoreKit SDK.</p>
+
+            <h2>3. Data Transfer and Sharing</h2>
+            <ul>
+                <li>All your data remains in the local sandbox storage of your physical iOS device.</li>
+                <li>We do not share, sell, or rent any of your information to third-party entities.</li>
+            </ul>
+
+            <h2>4. GDPR & CCPA Compliance</h2>
+            <p>Because we do not collect, transmit, or process any Personally Identifiable Information (PII) on external servers, our local-only architecture inherently respects the core tenets of the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA):</p>
+            <ul>
+                <li><strong>Right to Access & Deletion</strong>: You have absolute physical control over your data. You can delete individual prompt records within the App, or delete all stored data instantly and permanently by uninstalling TypePrompt from your device.</li>
+            </ul>
+
+            <h2>5. Changes to This Privacy Policy & Contact Information</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+            <p>If you have any questions about this Privacy Policy, please contact us at:<br>Email: support@typeprompt.com</p>
+        </article>
+
+        <!-- ================= 日本語 ================= -->
+        <article id="doc-ja" class="doc-content">
+            <p class="meta-date">最終更新日：2026年5月23日</p>
+            <p>TypePrompt（以下、「当社」または「本アプリ」）は、ユーザーのプライバシー保護を極めて重要視しています。本プライバシーポリシーは、本アプリのご利用に伴うユーザーデータの取扱方針について説明するものです。</p>
+
+            <h2>1. データの収集および利用の原則</h2>
+            <p>当社は、最小限のデータ収集およびローカル処理の原則を遵守しています。<strong>当社は一切のクラウドサーバーを運営しておらず、ユーザーが入力したテキスト等の入力を収集、保存、送信することはありません。</strong></p>
+            <ul>
+                <li><strong>キーボード拡張（フルアクセス不要）について</strong>：本アプリのシステムキーボード拡張は、iOSのシステム設定で<strong>「フルアクセスを許可」をオフにした状態</strong>でも正常に動作します。この場合、キーボードはネットワーク接続権限を持たない安全なサンドボックス内でローカル動作し、データを外部へ送信することは技術的に不可能です。</li>
+                <li><strong>ローカル保存されるデータ</strong>：ユーザーが作成、編集、削除したプロンプトデータは、SwiftDataを使用してデバイスのローカルストレージにのみ保存されます。当社が収集、同期、バックアップすることはありません。</li>
+                <li><strong>決済および取引データ</strong>：Pro会員購読のための決済およびトランザクション処理は、Apple社のApp Store / StoreKitシステムを介して安全に行われます。当社がユーザーのクレジットカード情報や銀行口座情報を取得・保管することはありません。</li>
+                <li><strong>ポスター共有機能</strong>：共有用の画像を生成する際、処理はiOSネイティブのImageRendererを使用し完全にデバイスローカルで行われます。外部サーバーに画像データが送信されることはありません。</li>
+            </ul>
+
+            <h2>2. サードパーティ製分析ツールおよびSDK</h2>
+            <p>ユーザーのプライバシーを最優先するため、本アプリはトラッキングや広告、ユーザー分析を目的とするサードパーティ製SDKを一切導入していません。Apple公式のSwift/SwiftUIライブラリおよびStoreKit SDKのみを使用しています。</p>
+
+            <h2>3. データの共有および提供</h2>
+            <ul>
+                <li>ユーザーのすべてのデータは、使用されている物理デバイスのローカルサンドボックス内にのみ保管されます。</li>
+                <li>当社はユーザーデータを第三者へ開示、販売、または共有することはいたしません。</li>
+            </ul>
+
+            <h2>4. GDPRおよびCCPAへの準拠</h2>
+            <p>当社は個人を特定できる情報（PII）の収集・外部送信を行わないため、本アプリのローカル構造は欧州一般データ保護規則（GDPR）およびカリフォルニア州消費者プライバシー法（CCPA）の要件を完全に満たしています。</p>
+            <ul>
+                <li><strong>データのアクセス権および消去権</strong>：ユーザーはご自身のデータに対して完全なコントロール権を有しています。アプリ内で個別にプロンプトを削除するか、アプリ自体をデバイスからアンインストールすることで、すべてのローカルデータを即座に恒久的に削除できます。</li>
+            </ul>
+
+            <h2>5. ポリシーの変更と問い合わせ先</h2>
+            <p>当社は、本プライバシーポリシーを必要に応じて変更することがあります。最新のポリシーはアプリ内または当社のサポートページに随時掲載されます。</p>
+            <p>ご不明な点がございましたら、以下のメールアドレスまでお問い合わせください。<br>メールアドレス：support@typeprompt.com</p>
+        </article>
+
+        <!-- ================= Español ================= -->
+        <article id="doc-es" class="doc-content">
+            <p class="meta-date">Última actualización: 23 de mayo de 2026</p>
+            <p>En TypePrompt ("nosotros", "nuestro/a"), nos comprometemos a proteger su privacidad. Esta Política de Privacidad describe cómo procesamos sus datos personales cuando utiliza nuestra aplicación principal, la extensión del teclado del sistema y la extensión para compartir.</p>
+
+            <h2>1. Principios de Recopilación y Procesamiento de Datos</h2>
+            <p>Nos adherimos a una estricta arquitectura de procesamiento local y minimización de datos. <strong>No ejecutamos servidores en la nube y no recopilamos, cargamos ni almacenamos sus datos de escritura o textos introducidos.</strong></p>
+            <ul>
+                <li><strong>Extensión de Teclado sin Acceso Total</strong>: Nuestra extensión de teclado personalizado puede funcionar <strong>sin necesidad de activar el "Acceso total"</strong> en los ajustes. En este modo estándar, el teclado se ejecuta localmente dentro de un entorno de sandbox seguro en iOS, no tiene privilegios de red y es técnicamente incapaz de transmitir sus datos fuera de su dispositivo.</li>
+                <li><strong>Datos almacenados localmente</strong>: Cualquier prompt personalizado que añada, edite o elimine se almacena localmente en su dispositivo mediante SwiftData. No sincronizamos ni guardamos estos datos en servidores externos.</li>
+                <li><strong>Datos de Transacción y Suscripción</strong>: Las transacciones para nuestra Suscripción Pro son procesadas de forma segura por Apple a través de la App Store / StoreKit. No recopilamos ni almacenamos sus datos de pago. Solo verificamos el estado de su compra a nivel local mediante identificadores de transacción anónimos.</li>
+                <li><strong>Utilidad de Compartir Pósters</strong>: Al crear pósters para compartir, la generación de la imagen se realiza completamente en su dispositivo utilizando ImageRenderer de iOS y se comparte nativamente mediante UIActivityViewController. No se envían imágenes a servidores externos.</li>
+            </ul>
+
+            <h2>2. Herramientas de Análisis y SDK de Terceros</h2>
+            <p>Para garantizar la máxima privacidad, no integramos SDK de análisis de terceros, marcos de seguimiento de usuarios ni SDK de publicidad. Solo utilizamos las librerías nativas de Swift/SwiftUI y el SDK oficial de StoreKit de Apple.</p>
+
+            <h2>3. Transferencia y Divulgación de Datos</h2>
+            <ul>
+                <li>Todos sus datos permanecen en el almacenamiento sandbox local de su dispositivo iOS físico.</li>
+                <li>No compartimos, vendemos ni alquilamos ninguna de sus informaciones a terceros.</li>
+            </ul>
+
+            <h2>4. Cumplimiento de GDPR y CCPA</h2>
+            <p>Dado que no recopilamos ni transmitimos Información de Identificación Personal (PII) a servidores externos, nuestra arquitectura local respeta los principios fundamentales del Reglamento General de Protección de Datos (GDPR) de la Unión Europea y la Ley de Privacidad del Consumidor de California (CCPA):</p>
+            <ul>
+                <li><strong>Derecho de Acceso y Eliminación</strong>: Usted tiene el control físico absoluto sobre sus datos. Puede eliminar registros de prompts individuales dentro de la Aplicación, o eliminar todos los datos almacenados de forma instantánea desinstalando TypePrompt de su dispositivo.</li>
+            </ul>
+
+            <h2>5. Cambios a esta Política de Privacidad y Contacto</h2>
+            <p>Podemos actualizar esta Política de Privacidad periódicamente. Cualquier cambio se publicará en esta página con una fecha de revisión actualizada.</p>
+            <p>Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos en:<br>Correo electrónico: support@typeprompt.com</p>
+        </article>
+
+        <!-- ================= Français ================= -->
+        <article id="doc-fr" class="doc-content">
+            <p class="meta-date">Dernière mise à jour : 23 mai 2026</p>
+            <p>Chez TypePrompt ("nous", "notre", "nos"), nous nous engageons à protéger votre vie privée. La présente Politique de Confidentialité décrit comment nous traitons vos données personnelles lorsque vous utilisez notre application principale, notre extension de clavier système et notre extension de partage.</p>
+
+            <h2>1. Principes de Collecte et de Traitement des Données</h2>
+            <p>Nous adhérons à une architecture stricte de traitement local et de minimisation des données. <strong>Nous n'exploitons aucun serveur cloud et nous ne collectons, ne téléchargeons ni ne stockons vos données de saisie textuelle.</strong></p>
+            <ul>
+                <li><strong>Extension de Clavier sans Accès Complet</strong> : Notre extension de clavier personnalisé peut fonctionner <strong>sans nécessiter l'activation de l'accès complet</strong> dans les réglages d'iOS. Dans ce mode standard, le clavier s'exécute localement dans un environnement de sandbox sécurisé sur iOS, ne possède aucun privilège réseau et est techniquement incapable de transmettre vos données en dehors de votre périphérique.</li>
+                <li><strong>Données stockées localement</strong> : Tout prompt personnalisé que vous ajoutez, modifiez ou supprimez est stocké localement sur votre appareil via SwiftData. Nous ne synchronisons pas et ne stockons pas ces données sur des serveurs externes.</li>
+                <li><strong>Données de Transaction et d'Abonnement</strong> : Les transactions pour notre Abonnement Pro sont traitées de manière sécurisée par Apple via l'App Store / StoreKit. Nous ne collectons et ne stockons pas vos données de paiement. Nous vérifions uniquement votre statut d'achat localement à l'aide d'identifiants de transaction anonymes.</li>
+                <li><strong>Fonctionnalité de Partage d'Affiches</strong> : Lors de la création d'affiches à partager, la génération de l'image est effectuée entièrement sur votre appareil en utilisant ImageRenderer d'iOS et est partagée nativement via UIActivityViewController. Aucune image n'est envoyée à des serveurs externes.</li>
+            </ul>
+
+            <h2>2. Outils d'Analyse et SDK de Tiers</h2>
+            <p>Afin de garantir une confidentialité maximale, nous n'intégrons aucun SDK d'analyse de tiers, aucun outil de suivi des utilisateurs ni aucun SDK publicitaire. Nous utilisons uniquement les bibliothèques Swift/SwiftUI natives et le SDK officiel de StoreKit de Apple.</p>
+
+            <h2>3. Transfert et Divulgation des Données</h2>
+            <ul>
+                <li>Toutes vos données restent stockées localement dans la sandbox de votre appareil iOS physique.</li>
+                <li>Nous ne partageons, ne vendons ni ne louons vos informations à des tiers.</li>
+            </ul>
+
+            <h2>4. Conformité aux Directives GDPR et CCPA</h2>
+            <p>Puisque nous ne collectons et ne transmettons aucune Information d'Identification Personnelle (PII) à des serveurs externes, notre architecture locale respecte les principes du Règlement Général sur la Protection des Données (RGPD/GDPR) de l'Union Européenne et de la loi californienne sur la protection de la vie privée des consommateurs (CCPA) :</p>
+            <ul>
+                <li><strong>Droit d'Accès et de Suppression</strong> : Vous disposez d'un contrôle physique absolu sur vos données. Vous pouvez supprimer des prompts individuellement dans l'Application, ou effacer toutes les données instantanément en désinstallant TypePrompt de votre périphérique.</li>
+            </ul>
+
+            <h2>5. Modifications de la Politique de Confidentialité et Contact</h2>
+            <p>Nous pouvons modifier cette Politique de Confidentialité de temps à autre. Tout changement sera publié sur cette page avec une date de révision mise à jour.</p>
+            <p>Pour toute question concernant cette Politique de Confidentialité, contactez-nous à :<br>E-mail : support@typeprompt.com</p>
+        </article>
+
+        <!-- ================= Deutsch ================= -->
+        <article id="doc-de" class="doc-content">
+            <p class="meta-date">Zuletzt aktualisiert: 23. Mai 2026</p>
+            <p>Wir bei TypePrompt („wir“, „uns“ oder „unsere“) legen großen Wert auf den Schutz Ihrer Privatsphäre. Diese Datenschutzerklärung beschreibt, wie wir Ihre persönlichen Daten verarbeiten, wenn Sie unsere Hauptanwendung, die Systemtastaturerweiterung und die Freigabeerweiterung nutzen.</p>
+
+            <h2>1. Grundsätze der Datenerhebung und -verarbeitung</h2>
+            <p>Wir halten uns an eine strenge Architektur der lokalen Datenverarbeitung und Datenminimierung. <strong>Wir betreiben keine Cloud-Server und wir erfassen, übertragen oder speichern Ihre Texteingaben in keiner Weise.</strong></p>
+            <ul>
+                <li><strong>Tastaturerweiterung ohne Vollzugriff</strong>: Unsere benutzerdefinierte Tastaturerweiterung funktioniert <strong>ohne dass in den Einstellungen „Vollzugriff erlauben“ aktiviert sein muss</strong>. In diesem Standardmodus läuft die Tastatur lokal in einer sicheren Sandbox-Umgebung auf iOS, hat keine Netzwerkrechte und ist technisch nicht in der Lage, Ihre Daten nach außen zu übertragen.</li>
+                <li><strong>Lokal gespeicherte Daten</strong>: Alle benutzerdefinierten Prompts, die Sie hinzufügen, bearbeiten oder löschen, werden über SwiftData lokal auf Ihrem Gerät gespeichert. Wir synchronisieren oder speichern diese Daten auf keinen externen Servern.</li>
+                <li><strong>Abonnement- und Transaktionsdaten</strong>: Transaktionen für unsere Pro-Mitgliedschaft werden von Apple sicher über den App Store / StoreKit abgewickelt. Wir erfassen oder speichern keine Zahlungsdaten. Wir überprüfen Ihren Kaufstatus lediglich lokal anhand der von Apple bereitgestellten anonymen Transaktions-IDs.</li>
+                <li><strong>Teilen von Poster-Grafiken</strong>: Beim Erstellen von Postern zum Teilen erfolgt die Bilderzeugung vollständig auf Ihrem Gerät mithilfe von iOS ImageRenderer und wird nativ über UIActivityViewController freigegeben. Es werden keine Bilddaten an externe Server gesendet.</li>
+            </ul>
+
+            <h2>2. Analyse-Tools und SDKs von Drittanbietern</h2>
+            <p>Um maximale Privatsphäre zu gewährleisten, verzichten wir auf die Integration von SDKs von Drittanbietern zur Benutzerverfolgung oder Werbung. Wir verwenden nur die nativen Bibliotheken von Swift/SwiftUI und das offizielle StoreKit-SDK von Apple.</p>
+
+            <h2>3. Datenweitergabe und Übermittlung</h2>
+            <ul>
+                <li>Alle Ihre Daten verbleiben im lokalen Sandbox-Speicher Ihres physischen iOS-Geräts.</li>
+                <li>Wir geben keine Ihrer Informationen an Dritte weiter, verkaufen oder vermieten sie nicht.</li>
+            </ul>
+
+            <h2>4. Konformität mit DSGVO (GDPR) und CCPA</h2>
+            <p>Da wir keine personenbezogenen Daten (PII) erfassen oder an externe Server übertragen, entspricht unsere lokale Struktur den Grundprinzipien der Datenschutz-Grundverordnung (DSGVO) der EU und des California Consumer Privacy Act (CCPA):</p>
+            <ul>
+                <li><strong>Recht auf Auskunft und Löschung</strong>: Sie haben die absolute Kontrolle über Ihre Daten. Sie können einzelne Prompts in der App löschen oder alle gespeicherten Daten sofort und dauerhaft löschen, indem Sie TypePrompt von Ihrem Gerät deinstallieren.</li>
+            </ul>
+
+            <h2>5. Änderungen dieser Datenschutzerklärung und Kontakt</h2>
+            <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Alle Änderungen werden auf dieser Seite mit einem aktualisierten Revisionsdatum veröffentlicht.</p>
+            <p>Bei Fragen zu dieser Datenschutzerklärung wenden Sie sich bitte an:<br>E-Mail: support@typeprompt.com</p>
+        </article>
+
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2026 TypePrompt. All rights reserved.</p>
+</footer>
+
+<script>
+    function switchLang(lang) {
+        // 1. 切换按钮的 active 样式
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // 找到当前点击的按钮并激活
+        event.currentTarget.classList.add('active');
+
+        // 2. 切换对应语言文档卡片的显示
+        const docs = document.querySelectorAll('.doc-content');
+        docs.forEach(doc => doc.classList.remove('active'));
+
+        const activeDoc = document.getElementById('doc-' + lang);
+        if (activeDoc) {
+            activeDoc.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
